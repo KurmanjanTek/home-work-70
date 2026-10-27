@@ -8,31 +8,34 @@ using MyChat.Web.Models;
 using MyChat.Web.ViewModels;
 
 namespace MyChat.Web.Controllers;
-[Authorize]
+//[Authorize]
 public class UserController: Controller
 {
     private readonly IUserService _userService;
     private readonly IMessageService _service;
     private readonly UserManager<User> _userManager;
     private readonly IWebHostEnvironment _webHostEnvironment;
-    
+    private readonly IEmailService _emailService;
 
-    public UserController(IUserService userService, IMessageService service,UserManager<User> userManager, IWebHostEnvironment webHostEnvironment)
+    public UserController(IUserService userService, IMessageService service,
+        UserManager<User> userManager, IWebHostEnvironment webHostEnvironment, IEmailService emailService)
     {
         _userService= userService;
         _service = service;
         _userManager=userManager;
         _webHostEnvironment=webHostEnvironment;
+        _emailService = emailService;
     }
     
     public async Task<IActionResult> Index()
     {
         var currentUser = await _userManager.GetUserAsync(User);
+       
         return View(currentUser);
     }
     
     
-    [Authorize(Roles="admin, user")]
+    //[Authorize(Roles="admin, user")]
     [HttpGet]
     public async Task<IActionResult> Edit()
     {
@@ -47,7 +50,7 @@ public class UserController: Controller
     }
     
     
-    [Authorize(Roles="admin, user")]
+   // [Authorize(Roles=" user")]
     [HttpPost]
     public async Task<IActionResult> Edit(EditProfileViewModel model)
     {
@@ -83,6 +86,8 @@ public class UserController: Controller
         currentUser.BirthOfDate= model.BirthOfDate;
         
         await _userService.UpdateAsync(currentUser);
+        await _emailService.SendEmailAsync(currentUser.Email, "Профиль изменен",
+            "Данные Вашего профиля в MyChat были изменены");
         
         return RedirectToAction("Index");
     }
@@ -114,7 +119,7 @@ public class UserController: Controller
         return View("Users");
     }
     
-    [Authorize(Roles="admin")]
+    //[Authorize(Roles="admin")]
     [HttpGet]
     public async Task<IActionResult> EditProfile(int id)
     {
@@ -133,7 +138,7 @@ public class UserController: Controller
         return View(model);
     }
     
-    [Authorize(Roles="admin")]
+    //[Authorize(Roles="admin")]
     [HttpPost]
     public async Task<IActionResult> EditProfile(EditProfileViewModel model, int id )
     {
@@ -222,4 +227,45 @@ public class UserController: Controller
         ViewBag.MessageCount = messageCount;
         return View(user);
     }
+
+    //[Authorize(Roles="admin, user")]
+    [HttpGet]
+    public IActionResult ChangePassword()
+    {
+        return View(new ChangePasswordViewModel());
+    }
+
+    //[Authorize(Roles = "admin, user")]
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(model);
+        }
+
+        var user = await _userManager.GetUserAsync(User);
+
+        if (user == null)
+            return NotFound();
+        
+        var result = await _userManager.ChangePasswordAsync(
+            user, 
+            model.CurrentPassword,
+            model.NewPassword
+            );
+
+        if (result.Succeeded)
+        {
+            await _emailService.SendEmailAsync(
+                user.Email, "Пароль изменен",
+                "Пароль Вашей учетнойзаписи MyChat был зменен");
+        }
+
+        return RedirectToAction("Index");
+
+       
+    }
+    
 }

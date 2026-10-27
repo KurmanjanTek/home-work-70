@@ -6,12 +6,10 @@ namespace MyChat.Web.Controllers;
 
 public class ChatController:Controller
 {
-    public MyChatContext _context;
     private readonly UserManager<User> _userManager;
 
-    public ChatController(MyChatContext context, UserManager<User> userManager)
+    public ChatController( UserManager<User> userManager)
     {
-        _context = context;
         _userManager = userManager;
     }
     

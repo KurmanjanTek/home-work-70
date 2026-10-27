@@ -1,7 +1,7 @@
 @model MyChat.Web.ViewModels.EditProfileViewModel
 
 <h1> Редактирование профиля</h1>
-<form asp-controller="User" asp-action="Edit" method="post" enctype="multipart/form-data">
+<a asp-controller="User" asp-action="Edit" method="post" enctype="multipart/form-data">
     <label asp-for="UserName"></label>
     <input asp-for="UserName" />
     
@@ -16,4 +16,6 @@
     
     <button type="submit">Сохранить</button>
 
-</form>
+    
+    <a asp-controller="User" asp-action="ChangePassword" method="post" class="btn-outline-success" > Изменить пароль</a>
+</a>

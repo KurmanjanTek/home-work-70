@@ -12,14 +12,16 @@ public class AccountController: Controller
     private readonly SignInManager<User> _signInManager; 
     private readonly IWebHostEnvironment _webHostEnvironment;
     private readonly IAccountService _accountService;
+    private readonly IEmailService _emailService;
 
     public AccountController(UserManager<User> userManager, SignInManager<User> signInManager,
-        IWebHostEnvironment webHostEnvironment, IAccountService accountService)
+        IWebHostEnvironment webHostEnvironment, IAccountService accountService, IEmailService emailService)
     {
         _signInManager = signInManager;
         _userManager = userManager;
         _webHostEnvironment = webHostEnvironment;
         _accountService = accountService;
+        _emailService = emailService;
     }
     
     [HttpGet]
@@ -60,6 +62,8 @@ public class AccountController: Controller
             var result = await _accountService.RegisterAsync(user, model.Password);
             if (result.Succeeded)
             {
+                await _emailService.SendEmailAsync(user.Email, "Добро пожаловать!",
+                    "Вы успешно зарегистрировались в MyChat");
                await _signInManager.SignInAsync(user, false);
                 return RedirectToAction("Index", "Home");
             }

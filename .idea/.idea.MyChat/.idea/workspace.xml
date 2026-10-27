@@ -9,7 +9,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3302b26a-edde-40d1-93ea-504baf199074" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MyChat.BLL/Interfaces/IEmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyChat.BLL/Services/EmailService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyChat.Web/ViewModels/ChangePasswordViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MyChat.Web/Views/User/ChangePassword.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyChat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyChat/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat.BLL/MyChat.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat.BLL/MyChat.BLL.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat.Web/Controllers/AccountController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat.Web/Controllers/AccountController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat.Web/Controllers/ChatController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat.Web/Controllers/ChatController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat.Web/Controllers/UserController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat.Web/Controllers/UserController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat.Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyChat.Web/Views/User/EditProfile.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/MyChat.Web/Views/User/EditProfile.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,25 +40,26 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/KurmanjanTek/home-work-63-MyChat.git&quot;,
+    &quot;url&quot;: &quot;https://github.com/KurmanjanTek/home-work-69.git&quot;,
     &quot;accountId&quot;: &quot;73a834a9-f843-49dd-871c-4d72cb2be815&quot;
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/MyChat/Controllers/AccountController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Controllers/ChatController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Controllers/MessageController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Controllers/UserController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Controllers/ValidationController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Models/MyChatContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Models/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/ViewModels/EditProfileViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/ViewModels/LoginViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/ViewModels/RegisterViewModel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Views/Account/Login.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Views/Account/Register.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Views/User/Index.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/MyChat/Views/User/Profile.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Interfaces/IAccountService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Interfaces/IEmailService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Interfaces/IMessageRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Interfaces/IMessageService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Interfaces/IUserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Interfaces/IUserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Services/AccountService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Services/MessageService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.BLL/Services/UserService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.DAL/Class1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.DAL/Repositories/MessageRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.DAL/Repositories/UserRepository.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.Web/ViewModels/ChangePasswordViewModel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/MyChat.Web/Views/User/ChangePassword.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -77,7 +88,7 @@
 }</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MyChat: http">
     <configuration name="MyChat: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MyChat/MyChat.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MyChat.Web/MyChat.Web.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net10.0" />
       <option name="LAUNCH_PROFILE_NAME" value="http" />
       <option name="USE_MONO" value="0" />
@@ -93,7 +104,7 @@
       </method>
     </configuration>
     <configuration name="MyChat: https" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
-      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MyChat/MyChat.csproj" />
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/MyChat.Web/MyChat.Web.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net10.0" />
       <option name="LAUNCH_PROFILE_NAME" value="https" />
       <option name="USE_MONO" value="0" />
@@ -121,6 +132,9 @@
       <workItem from="1791651073169" duration="1872000" />
       <workItem from="1791792220647" duration="2459000" />
       <workItem from="1792008459535" duration="622000" />
+      <workItem from="1792743323824" duration="19122000" />
+      <workItem from="1792762627597" duration="57000" />
+      <workItem from="1793086482274" duration="9613000" />
     </task>
     <servers />
   </component>
